@@ -7,13 +7,22 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
-    <script language = "javascript" type = "text/javascript " src="file.js"></script>
+    <script language = "javascript" type = "text/javascript " src="file1.js"></script>
    <head>
     
     <style>
-     table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
+table, th, td {
+        border: 1px solid white;
+        border-collapse: collapse;
+       
+      }
+      #tab{
+        border: 1px solid white;
+        border-collapse: collapse;
+        background-color:black; 
+        color :white;
+        
+      }
      
      </style>
     </head>
@@ -37,21 +46,24 @@
             titolo...)
         
         
-        FROM Attore
-INNER JOIN Interpreta ON Attore.idAttore = Interpreta.idAttore
-INNER JOIN Cinema ON Interpreta.idCinema = Cinema.idCinema
-INNER JOIN Programmato ON Cinema.idCinema = Programmato.idCinema
-INNER JOIN Film ON Programmato.idFilm = Film.idFilm
+          FROM Attore
+          INNER JOIN Interpreta ON Attore.idAttore = Interpreta.idAttore
+          INNER JOIN Cinema ON Interpreta.idCinema = Cinema.idCinema
+          INNER JOIN Programmato ON Cinema.idCinema = Programmato.idCinema
+          INNER JOIN Film ON Programmato.idFilm = Film.idFilm
           </p>     
-        Elenco Film:
+        Elenco Cinema:
       </h3>
         <form action="ModAgg.php" method="post">  
-          Film :
-          <input id="Film1" type='text'>           
-          <br><br>
-          <table id="Tab" align="center"> 
-            <tr><td>Nome</td><td>Posti</td><td>Città</td></tr>
-         </table>
+        <br><br>
+          <table id="Tab" align="center" class="table table-dark">
+             <thead class="thead-dark">
+            </thead>
+          <tbody align="center"><tr>
+           <td><h4>Nome :</h4></td><td><h4>Posti :</h4></td><td><h4>Città :</h4></td>
+            </tr></tbody>
+        </table>
+        
         </div>
         <div class="panel-footer" style="background-color:skyblue;">
        <button  type="button"  id="btn" class="btn btn-default btn-sm">
